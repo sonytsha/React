@@ -1,0 +1,62 @@
+JavaScript versions have names that seem to not be quite as straightforward. ES6, ES2015, ESNext and so on.
+
+since there are a pretty wide range of different runtimes that JavaScript programs can be run in, different browsers and Node.js for example. Not all of these runtimes will 
+support the same versions and features of JavaScript. Take Chrome and Microsoft Edge for example, Both of these browsers are created and maintained by different companies with 
+different priorities. And because of this, the exact type of JavaScript code that these browsers are able to execute, can vary quite a bit. And those are just two browsers. 
+If we take into account other runtimes like Node.js and the rest of the possible browsers and different versions of those browsers, the range of different JavaScripts that 
+are supported becomes pretty large. 
+
+The ECMAScript Specification defines different sets of language features that a runtime must support in order to be 'ES5', 'ES6', 'ES7' etc.
+
+The ECMAScript Specification provides a "guarantee" of what features a given JS runtime will support
+
+ES5 is fully supported by most modern browsers..
+but ES6+ provides a greatly improved developer experience.
+
+BABEL - converts ES6+ code into code code with  better browser support
+there are tools such as a tool called Babel, that enable us to write JavaScript with more modern JavaScript syntax, say ES6 and beyond and transpile our more modern
+code which is more developer friendly into older JavaScript syntax, that all modern JavaScript runtime support. 
+
+So what are ES6, ES7, ES2015, ESNext and so on? Well, each of these names refers to a different version of the ECMAScript specification. And in order to sort this out,
+let's start off with the fact that the ECMAScript specification numbers actually do follow a predictable numeric progression. There's an ES1, an ES2, an ES3 and so on, 
+all the way through ES10, which at the time of this recording is the latest specification. Although there will probably be an even later one out by the time you see this. 
+Not that most browsers actually support these features but the specifications are out there. However, to complicate the names for these versions a little bit. For some reason
+when they reached ES6, they decided to start naming the versions based on the year the specification was published. So for example, ES62015 instead of just using numbers 
+like ES6. The result of this is that you'll hear constant references both names throughout the JavaScript ecosystem. So ES6 and ES2015 are the same thing, as our ES7 and 
+ES2016 and so on.
+
+And what about ESNext? Well, this one has a pretty simple explanation. ESNext refers to the next version of the ECMAScript specification that hasn't been released yet. 
+
+So if the latest specification that's been released is ES10 for example, also known as ES2019. ESNext we'll refer to ES11 and all the features that haven't been officially added to the
+language specification yet. 
+
+** ESNext refers to the next version of JS that has not been officially released yet
+
+There are several "dialects" that transpile to JS - Typescript, coffeescript
+
+JS dialects : 
+
+1) TypeScript : adds static typing to JS
+
+The most popular of these dialects is TypeScript. What TypeScript does is add static typing to JavaScript. We saw earlier that regular JavaScript is dynamically typed, 
+meaning that the types of variables aren't determined until the code is actually run. In practice, this dynamic typing can make collaborative development a little more 
+difficult. Since static typing can often be an important tool for communicating what your intentions are with a given piece of code. So TypeScript allows developers to write 
+JavaScript with static types. This code that developers write is then compiled to regular JavaScript, so that it can be run in browsers or by Nord.js or whatever other runtime
+you want. 
+
+2) CoffeeScript : Offers a "syntacticallyt improved version of JS
+
+CoffeeScript is another fairly popular dialect of JavaScript. CoffeeScripts goal is to let developers write a sort of syntactically improved version of JavaScript. It cuts out 
+many of the brackets used in JavaScript and provides syntax shortcuts for many of the common operations. 
+
+JavaScript :                                        coffeescript : 
+ 
+Let person  = {                                     person  =
+name : "John",                                      name : "John"
+age : 40,                                           age : 40
+haircolor : "brown" ,                               haircolor : "brown" 
+};
+
+3) elm : Pure functions and data visualization
+4) LogicJS : Logic programming
+5) Dart : Improved OOP features
