@@ -1,0 +1,18 @@
+it's incredibly popular
+easy to learn and use
+can be used for a very wide range of applications
+code can be executed on the client side, which reduces the load on the server
+we have to worry about browser support
+we have to be more securoty-conscious :
+* the client has a copy of our source code
+* third party code can make our site more vulnerable
+certain parts of the language can behave very strangely
+not the bedt language for "Object-oriencted purists"
+as a language , JS is evolving very quickly
+
+pros                                  vs           cons
+*popularity                                     * browser-support
+* simplicity                                    * security
+* multi-platform                                * language oddities
+*client-side execution                          * not great for OOP
+                                                * rapid change
