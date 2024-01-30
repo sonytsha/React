@@ -1,0 +1,23 @@
+What can I do with JavaScript ? 
+1) front end
+2) back end
+3) mobile
+4) desktop
+5)etc...
+
+JS - > 1) React , 2) Angular , 3) Vue . 4) Svelte
+
+JQuery - Simplifies HTML manipulation, event handling, network requests, etc
+
+"Vanilla JavaScript" is just JavaScript without any libraries
+
+NodeJs : Allows JavaScript to be run outside the browser, i,e on a server
+
+npm : Allows developers to publish and share code, usually making development a lot faster
+
+mongoDB : A non-relational database that stored JavaScript objects
+
+React Native, Native Script  : allows us to write mobile apps with JavaScript, gives us the possibility of having a single codebase for all platforms(!!!)
+
+electron : allows us to build desktop apps using JavaScript
+
