@@ -1,0 +1,45 @@
+JavaScript is NOT Java
+JavaScript is an interpreted language : 
+* executed without compiling first
+* the JavaScript runtime reads actual JavaScript code, not bytecode
+* The exception to this is JIT compilation 
+
+JS is dynamically and weakly typed language : 
+* variable typed determined at runtime, instead of at compile time
+* makes sense, since javascript is not compiled
+* opposite is "static typing "
+
+dynamic typing                vs       static typing
+
+run the prpgram and then              check types and then run the program
+check types
+
+let x = 5;                             int x = 5;
+
+how strictly does a language enforce its types : for ex : "the ans is " + x : allowed : string + int
+
+JS is dynamically and weakly typed - variables' types are determined at runtime and not enforced very strongly
+
+JS has strong support for Object-Oriented Programming but in a slightly different way than you're probably used to , for ex: JS does not currently support private variables
+( private variables : means using private keyword u cant hide something) ( JavaScript currently doesn't have native support for private variables which definitely makes 
+encapsulation harder because you can't hide all the internal implementation details of an object by just using a private keyword as you can in Java.)
+
+JS is single threaded means JS will only be executing 1 opeation at a time ( Again this is in contrast to languages like Java where multi-threaded or concurrent execution is 
+supported and multiple operations can actually be running in parallel. Now JavaScript single-threaded nature can be a little inconvenient in some cases. In particular we have
+to be careful when writing JavaScript not to block the main thread with synchronous operations. For example JavaScript's built-in alert function which displays a little alert 
+window in the users browser, completely blocks all other execution until the user closes the alert. Besides that kind of thing, performing operations on large amounts of data
+isn't really one of JavaScript strong suits either. )
+
+Processing large amount of data is not one of JS strong suits
+
+in summary : 
+JS is : 
+* interpreted ( not compiled)
+* Dynamically and weakly types
+* 'mostly' object-oriented
+* Single-threaded
+
+
+
+
+
