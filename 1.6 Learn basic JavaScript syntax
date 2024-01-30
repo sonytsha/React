@@ -1,0 +1,33 @@
+The basic syntax for JS statements : 
+
+1) let x  = 5 ;
+2) let x = 5 
+both are correct
+
+let myVeryLongString = " this statement is too long for one line";
+
+myFunctions(arg1, arg2, arg3, arg4);
+OR
+myFunction ( arg1,
+arg2,
+arg3,
+arg4,
+);
+------------------------------------------------------------------------------------------------------------------------
+how to write comments : 
+let x = 5; // this is a comment
+
+// this is a 
+// multi line comment
+
+/* this is a better
+multi line comment 
+*/
+
+-----------------------------------------------------------------
+how to print things to the console : 
+
+let someVariable = 100;
+console.long(someVariable);
+
+this prints "100" to the console
