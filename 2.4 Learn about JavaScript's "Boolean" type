@@ -1,0 +1,28 @@
+the "boolean" type 
+
+typeof true;
+typeof false; === > only 2 boolean values ,m true and false , it can be set like to or it can be proved as true or false below
+
+let sonylikemomo = true;
+let sonylikechilly = false;
+
+let result = 5 > 4  ====> returns false
+
+other types can be converted to boolean values
+but its not always obvious which they will convert to
+
+let emptystring ="";
+if(emptystring) {
+// this wont be executed 
+}
+because "" defines false
+
+values that defines false are : 
+1) ""
+2) 0
+3) NaN
+4) 0n
+5) null
+6) undefined
+7) false
+
