@@ -1,0 +1,52 @@
+undefined means either variable does nopt exist or has not been assigned a value yet
+
+let x;
+typeof x; 
+
+type : undefined
+
+typeof bananas; ===>undefined
+
+This is also the case, if we try and access a property that doesn't exist on an object or an index that doesn't exist in an array. 
+
+let person = { name: "shaun"};
+person.age; ===> undefined
+
+let myarray = [1,2,3];
+myarray[100]; ===> undefined
+
+We'll also get undefined as the return value of a function that doesn't use the return keyword to return a value.
+
+function donothing() { }
+let result = donothing(); ===> result is undefined
+
+at a high level, the difference between undefined and null, is something like this. Undefined means that we either haven't 
+declared a variable or we have declared a variable, but haven't actually assigned it a value. So, you could think of undefined as being, 
+the sort of default value for variables before we've actually assigned them a real value. Although, technically undefined is the lack of an 
+assigned value, but really we're just kinda getting down to semantics at that point. Null, on the other hand, usually means that a piece of data has
+been defined and we've explicitly assigned the value, null to it. I sometimes see null used to mean something like, this value does exist, but at this 
+point we don't know what it is. So, for example, if you're entering a person's data into a program and they didn't fill out their age, they do have an age but 
+we just don't know it yet. So, we might explicitly assign null for the person's age in this case. 
+
+let myvariable;
+typeof myvariable; ==> undefined
+typeof bananas ; ==> undefined
+
+let person = {
+name : "sony shaw",
+age : null,
+}
+
+typeof undefined ; === > undefined
+typeof null ; ==> object
+
+When we're using default values for function arguments, passing undefined for an argument, we'll use the default value instead. Whereas passing null for an argument 
+won't trigger the use of the default value. And again, all of this about default values is something we'll discuss later on, when we go into more detail.
+
+function.print(msg = "default") {
+console.log(msg);
+}
+
+print("hello"); prints hello
+print(undefined); prints default
+print(null); prints null
