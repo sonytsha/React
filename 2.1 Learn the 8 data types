@@ -1,0 +1,32 @@
+// defining variable in JS is done with one of 2 keywords, var or let
+var myVariable = 5; // function-scoped
+or
+let yourVariable = "Hello "; // block-scoped
+
+// defining constants in JS is done with const keyword
+const myConst = 505;
+myConst = 101; -- > error
+once a variable is defined using const, it can not be reassigned to another value
+
+globalVarible = "Global" --- this is a valid syntax to define a variable in JS, without even const
+
+The 8 data types in JS : 
+1)N number
+2) string
+3) boolean
+4) objects
+5) functions
+6) undefined
+7) bigints
+8) symbols
+
+variables dont have types, only values have types
+
+// the "typeof " operator
+
+let x = 5;
+let y = "I am a string!";
+
+typeof x;
+typeof y;
+
