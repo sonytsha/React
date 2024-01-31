@@ -1,0 +1,55 @@
+the "string" type
+
+let mystring = "hello";
+let singlequotestring = 'hello';
+let doublequotestring = "hello";
+let backtickstring = `hello`;
+
+backtick strings : 
+let backtickstring = `hello $(name)`;
+
+string properties : 
+let mystring = 'hello';
+mystring.length; =====> 6
+mystring.charAt(0); =====> 'h'
+mystring.toUpperCase(); =====> 'HELLO'
+mystring.toLowerCase(); =====> 'hello'
+
+The escape character : 
+" " how do i use quotes ? " she asked " ; // error 
+let question = "\" how do i use quotes ?\" she asked ";  ====== > backslash here is called escape character 
+or
+let question = ' " how do i use quotes?"she asked';
+or let question = " ' how do i use quotes ? ' she asked ";
+
+\n ===== > new line
+let poetry = "One fish \n two fish " =====> output 
+one fish
+two fish
+
+
+Concatenating Strings : 
+
+1st way :
+
+let firstname = "John";
+let lastname = "doe";
+let fullname = firstname + " " + lastname ; // output = "John doe"
+
+2nd way : 
+
+let firstname = "John";
+let lastname = "doe";
+let fullname = firstname.concat(" ").concat(lastname); // output = "John doe"
+
+adding numbers and strings : 
+
+let x = 5;
+let mystring = " x is " + x; // output : x is 5
+
+let x = 5;
+let y = 8;
+let mystring = "x plus y is " + x + y; // output : x plus y is 58  =====> derived way : 1) "x plus y is " + x + y ==> 2) "x plus y is 5" + y ==> 3) x plus y is 58
+let mystring = "x plus y is " + ( x + y ) ; output : x plus y is 13
+
+
