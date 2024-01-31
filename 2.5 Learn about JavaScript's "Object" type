@@ -1,0 +1,107 @@
+JS objects are a bit different than in other languages
+
+let person = {
+name : "John doe",
+age : 35,
+eyecolor :"brown"
+};
+
+// name, age, eyecolor are keys
+// john doe, 35, brown are values
+//A data type that will touch on a bit later. And each of these keys can be assigned a value which can be any of the eight JavaScript data types.
+It can be a number, a string, a boolean or it can even be another object so that we could have nested objects. So once we've defined an object
+which as you've probably noticed is done using brackets as we see here, we can access the value of any of the objects' properties by using one of two different syntaxes.
+
+accessing object properties : 
+
+person.name --> "jane doe"
+person.age --> 35
+person.eyecolor --> "brown"
+
+or another way
+
+person["name"] --> "jane doe"
+person["age"] -- > 35
+person["eyecolor"] --> "brown"
+
+Accessing Object Properties : 
+
+let propertyname = "eyecolor";
+person["propertyname"]; --> output "brown"
+
+Setting Object Properties : 
+person.age = 36;
+person["age"]  = 36;
+person.age --> 36
+
+JS obects are assigned by reference
+
+If we assign an object to a variable and then define another variable equal to the \first variable, both variables will be pointing to the same 
+object in memory instead of two different objects. This all means that if we make changes to one of the variables, those changes will be reflected on the 
+other one as well as we see here.
+
+let myObject = {
+a : 1;
+b : 2;
+};
+
+let myotherobject = myobject;
+
+ This sort of thing is true when passing objects' arguments to functions as well. And we haven't talked about functions yet but we'll get there soon. Objects are passed 
+by reference in JavaScript, meaning that if a function makes changes to an object inside the function body, those changes will be reflected on the actual object we passed. 
+
+let myotherobject = myobject;
+
+myobject.a --> output 1
+myotherobject.a --> output 1
+
+myotherobject.a = 100;
+myobject.a  --> output 100
+
+
+function myfunction ( obj) {
+obj,nsme = "changed";
+}
+myfunction(myobject);
+myobject.name ---> changed
+
+
+Setting variables as properties : 
+
+let name = " dana" ;
+let age = 22;
+
+or let person = { 
+name : name , 
+age : age ,
+}
+
+or 
+let person  = { 
+name,
+age 
+}
+
+let person = { 
+"job-title" :"developer",
+}
+
+keys with special charaters : 
+let operations = {
+" + " : "plus" ,
+"-" : " minus",
+"*" : "times",
+"/
+ : "divided by",
+}
+
+special characters can be accessed via [] only : operations["+"]
+operations["-']
+
+operations.+ -- this is wrong, special characters can not be accessed withoiut []
+
+The "null" object : 
+let person = null; // null means it has no data of the person
+typeof person; ----> object ( datatype )
+
+
