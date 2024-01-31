@@ -1,0 +1,59 @@
+array defined within square brackets and datatype can be anything within it 
+
+[ 1,2,3,4,5,6]
+
+let myarray = [ 
+1,
+2,
+"three",
+{ message : "hello" },
+[1,2,3],
+]
+
+arrays are objects
+typeof[1,2,3]; ==== > object 
+
+accessing array elements : 
+
+letmyarray = [
+"zero",
+"one",
+"two", 
+"three"
+];
+
+myarray[0] ==> zero
+myarray[1] ==> one
+
+modifying array elements : 
+
+myarray[] = "uno";
+myarray[1] = "uno";
+
+array length : 
+var myarray = [
+"zero",
+"one",
+"two",
+"three"
+];
+--------------------- array lenghth--------------------
+myarray.length; == > 4
+
+-------------- array push ----------------
+myarray.push("four"); ====> ["zero", "one","two", "three","four"]
+----------------array pop---------------
+array.pop(); ==> three
+myarray ===> ["zero", "one", "two"]
+-------------------------- array indexof ----------------
+
+myarray.indexof("two"); --- > 2  found two in 2nd position ( 0,1,2nd positiion )
+myarray.indexof("one million") --- > -1 when value not found returned negative
+
+
+other array methods ---------
+myarray.map( x=> x.toUpperCase());
+myarray.filter( x=> x.length < 4);
+myarray.sort();
+
+
