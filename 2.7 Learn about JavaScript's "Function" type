@@ -1,0 +1,45 @@
+functions in JavaScript are reusable blocks of code that take some number of arguments and can return some value using the return key word. Although whether or not a function actually takes any arguments or returns anything is optional and really depends on the use case. 
+
+function add ( x,y) {
+return x + y;
+}
+typeof add; == > function // For example, we can define a function called "add" that takes two arguments and returns the sum of those arguments. 
+typeof function() {}; ===> function
+
+Now there are actually a number of different possible syntaxes for defining functions in JavaScript. Besides this one, which starts with the function key word, we can define functions like this, with a syntax that looks much more like how we would define variables of other types.
+And in JavaScript ES6 and later, we have something called arrow function syntax which is a sort of abbreviated syntax for functions
+
+function myfunction ( arg1, arg2, ... ) {
+// do some stuff
+return somevalue;
+}
+
+function add ( x,y) {
+return x + y;
+}
+
+let add = (x,y) => {
+return x + y;
+}
+
+only functions are defined with the function myFunc() {} syntax are hoisted
+
+Functions defined by saying the function keyword first, for example 'function my function', and only functions defined this way, are hoisted. What "hoisted" means is that
+if we define a function in this way we're able to use it earlier in the code than where we defined it. And this is not true with functions defined using the other 
+variable-like syntax. If we try to use those above where they're defined in the code, we'll get an error saying that our function isn't defined yet. 
+
+Calling functions
+
+function add ( x,y) {
+return x + y;
+}
+add( 10,13); == > 23
+
+We just write the function name, followed by parentheses that contain whatever arguments we want the function to be called with. Or, if the function doesn't have any arguments, 
+we just put two parentheses after the function. And that's about it for functions.
+
+if the function does not have any arguments, we just put two paranthesis after the function name : example: 
+function dosomething() {
+ // does something 
+}
+dosomething();
