@@ -1,0 +1,57 @@
+typeof 5 ; ===== number
+
+let x = 5;
+typeof x; ===== number
+
+let hex = 0X2A; // we can define hexadecimal number in JS by putting 0X at the beginning
+let binary = 0b1010; // binary by 0b before the number
+let octal = 0o52; // octal by 0o before the no
+let sixtymillion = 6e7; // for  very large numbers we can use scientific notation , 6 followed by 7 zero = 6e7
+
+there are 2 special number values
+let ans = 10 * "oops"; ====== NaN // not a number
+
+let ans = 9/0; ====== infinity 
+let ans = Math.pow(10,999) ==== infinity ( this no is way too big for JS)
+
+typeof NaN  ===== Number
+typeof infinity ===== Number
+both are defined as numbers
+
+The " Math " Object  -> 
+
+let x = Math.pow(10,3);
+let y = Math.sqrt(144);
+
+Math.abs(x);
+Math.max(x,y);
+Math.min(x,y);
+Math.ceil(1.8);
+Math.floor(1.8);
+Math.round(1.8);
+Math.sin(x);
+.....
+
+All numbers values are stored as 64-bit floating point 
+
+big numbers are only accurate to about 15 digits 
+
+and for floating points, there can be a slight diff in calculation
+let x = 0.1+0.7; === 0.79999999999
+
+Number precision : 
+
+1) its not good idea to compare two floating point numbers in JS
+as 01 + 0.7 wont be accurate
+
+let x = 0.1 + 0.7;
+if ( x == 0.8) {
+//never executes!
+}
+
+solution : multiply the digit into 10 and then roundoff, that will make it same
+
+let  x  = 0.1 + 0.7;
+if ( Math.round ( x*10) === Math.round( 0.8 * 10)) {
+// this works! 
+}
