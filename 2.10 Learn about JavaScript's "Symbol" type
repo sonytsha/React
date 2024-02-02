@@ -1,0 +1,58 @@
+let mySymbol = Symbol ( "myfirstsymbol");
+
+typeof mySymbol;  ===> "symbol"
+
+two distinct symbols will never be equal to each other
+Symbol() === Symbol() =====> false
+
+the only way that two symbols will ever be equal is if we either compare the same symbol to itself, 
+or if we have a reference to the same symbol. So using the symbol constructor is one way to create a symbol in JavaScript.
+
+let mySymbol = Symbol("symbol!");
+mySymbol === mySymbol ========> true
+
+or 
+let mySymbol = Symbol("symbol!");
+let theSameSymbol = mySymbol;
+mySymbol === theSameSymbol =====> true
+
+The other way that we can create symbols is by using symbol.for, which creates a new symbol in a sort of global symbol registry. That looks something like what we see here, 
+we're creating a new symbol for the string 123 in the global symbol registry, and getting a reference to that symbol. And in this case, we can create two or more symbols
+that are equal to each other. At least it appears that way anyway. In reality, JavaScript only considers these two symbols equal because they're references to the same symbol 
+in the global symbol registry. 
+
+let mySymbol = Symbol.for("123");
+let theSame = Symbol.for("123");
+
+mySymbol === theSame =====> true
+
+Symbols are used to acoid "value clashes"
+
+Some of these objects could already have a size attribute. Let's say each object is information about a shirt, for example. This would mean that our statement here where
+we say shirt size equals 11,would overwrite the original size property of the object unintentionally. And this is where symbols come to the rescue. Instead of doing it this
+way, using strings, we can use a symbol as the key to keep track of the object size. And because of the property of symbols that no two distinct symbols are ever equal to
+each other. There's no way that we can accidentally overwrite the size property, and there's also no possibility of our internal size property accidentally being overwritten 
+either.
+
+let someObject = {
+// object has 11 properties 
+};
+
+someObject["size"] = 11;
+
+let shirt = {
+//
+size : "Medium",
+};
+shirt["size"] = 11;
+
+
+let shirt = {
+//...
+size : "Medium",
+};
+let sizeSymbol = Symbol("size");
+shirt[sizeSymbol] = 11;
+
+Symbols are for ensuring uniqueness
+
