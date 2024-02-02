@@ -1,0 +1,55 @@
+5 === 5  ==> equal
+
+== double equal /// does not check for type
+=== triple equal /// checks if they are of same type as well as they are equal to each other
+
+
+5 == 5 ====> true
+'HI' === 'HI' ======> true
+
+5 === '5" ======> false
+10 === 10n ==> flase
+
+double equals does not check for type
+
+5 == "5" =====> true
+10 == 10n ========> true
+
+0 == "0" =====> true
+0 == "" =========> true
+0 == [] =======> true
+0 == null =====> false
+0 == undefined ========>false
+
+"true" == true =====> false
+"false" == false ========> false
+
+when in doubt use the triple equals
+
+5 == "5" ====> if it shows error use the next one
+5 === Number("5") =========> conver the type to number and then compare , it will not throw error , its true now
+
+
+The exception to this of course is if they're not actually two distinct objects but just two references to the same object. Just like we saw with symbols, two references to 
+the same object would return true in JavaScript. So since the double and triple equal signs won't work for comparing objects and arrays in JavaScript if we wanna actually
+check the two objects are equal in the sense that they both have the same keys and values, we have to actually check each of these keys and values individually to see if
+they're the same between the two objects. This is called checking for deep equality and if two objects are equal in this way we see that they're deep equal. Now checking all
+the keys and values for two objects might sound like a little bit of a pain and it definitely would be if we had to do it all manually but fortunately there are much easier 
+ways. None of which were quite ready to look at it at this point. For now just remember that two distinct objects would never be considered equal by the regular equality 
+operators in JavaScript. And as I already said, this equality stuff goes for a arrays two. Two arrays would only be considered equal by the double and triple equals operators
+if they're not actually two distinct arrays but references to the same array.
+
+let myObj1 = { message : "Hello"};
+let myObj1 = { message : "Hello"};
+
+myObj1 === myObj2 =========> false
+
+let myObj1 = { message : "Hello"};
+let myObj2 = myObj1;
+
+myObj1 === myObj2 =====> true
+
+let myArr1 = [1,2,3];
+let myArr2 = [1,2,3];
+
+myArr1 === myArr2  =======> false
