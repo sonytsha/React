@@ -1,0 +1,22 @@
+An "abbreviated version" of the if statement
+
+somecondition ? value1 : value2 ;
+
+true ? : value1 : value2 : ==== > value1 will be printed
+false ? : value1 : value2 : ==== > value2 will be printed
+----------------------------------------
+to simplify if statement , ternary operators are used : 
+with if statement it will look like : 
+let greeting;
+if( isbeforenoon) {
+greeting = "good morning"; }
+else {
+greeting = "good afternoon"; }
+
+with ternary operator , it will look like :
+let greeting = isbeforenoon ? : "good morning" : "good afternoon" ;
+
+----------------------------------------------------------------------
+nested ternary operator : 
+
+let greeting = isbeforenoon ? "good morning " : isbeforefiveoclock ? : "good afternoon" : "good evening " ;
