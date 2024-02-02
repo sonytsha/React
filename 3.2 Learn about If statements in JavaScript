@@ -1,0 +1,88 @@
+if(somecondition) {
+// do something }
+else if ( othercondition) {
+// do something else }
+else {
+// do another thing }
+
+() is mandetory in JS
+
+values od all types can be truthy or falsy
+
+// For example, instead of explicitly checking of a string's length as greater than zero, we can simply say if my string and since empty strings are treated as falsy in JavaScript
+, the body of this if statement won't be executed if the string's length is zero. 
+
+let mystring = "";
+if( mystring) {
+// this wont be executed }
+else {
+// but this will }
+
+which values are 'truthy' and 'falsy' in JS :
+
+"" --> falsy
+[] --> truthy
+{} --> truthy
+NaN --> falsy
+Infinity --> truthy
+0 --> falsy
+
+"" == false                    IN JS --> true
+0 == false                     IN JS --> true
+0n == false                    IN JS --> true
+NaN == true                    IN JS --> false
+Null == true                   IN JS --> false
+Undefined == true              IN JS --> false
+
+// It's true that the empty string zero and zero N are double equal to false in JavaScript but not a number isn't. And neither are null and undefined. And these last three are 
+considered falsy by JavaScript. And furthermore, an empty array is double equal to false but it's considered truthy by JavaScript. 
+
+// These are the seven values that JavaScript treats as falsy. The rest of the possible values in JavaScript are treated as truthy.
+
+ ************************* The 7 falsy values are :  *****************************************
+1) ""
+2) 0
+3) 0n
+4) NaN
+5) undefined
+6) null 
+7) false
+
+all others are truthy
+
+if statement in JS :
+
+let x = 100;
+if( x> 5) {
+// do something 
+}
+
+AND operator : 
+let x = 100;)
+if ( x > 5 && x < 100 ) {
+// do something }
+
+the OR operator : 
+
+let x = 100;
+if ( ( x == 5 ) || ( x == 10 ) {
+// do something 
+}
+
+The NOT operator : 
+
+let x = 100;
+if ( ! ( x> 99) {
+// do something }
+
+Combining operators : 
+
+if(!iscompleted && x < 5) {
+// do  something 
+} else if ( x > 100 || !isTuesday) {
+// do something else }
+else {
+// do some other thing }
+
+
+
