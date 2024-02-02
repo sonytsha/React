@@ -1,0 +1,10 @@
+JS does not have classes
+instead of clases, JS uses prototypes
+
+classes are categories that we can create instances of : 
+class person {
+constructor(name, age) {
+this.name = name;
+this.age = age;
+}
+sayHello()
