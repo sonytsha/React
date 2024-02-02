@@ -1,0 +1,57 @@
+let myvariable = 99; =====> block scoped
+var myvariable = 99; =======> function-scoped
+
+
+function myfunction () {
+var x = "function scoped!";
+console.log(x);
+}
+myfunction();  ==============> it will print "function scoped!"
+
+
+function myfunction () {
+var x = "function scoped!";
+let y = "block scoped!";
+console.log(x);
+console.log(y);
+}
+myfunction(); ==============> it will print 
+"function scoped!" 
+"block scoped!"
+
+function myfunction () {
+var x = "function scoped!";
+let y = "block scoped!";
+console.log(x);
+console.log(y);
+}
+myfunction();
+console.log(x);
+console.log(y);
+==============> it will print 
+"function scoped!" 
+"block scoped!"
+then throw error as console is defined outside function , this is the limitation of function scoped as its inside function hence can not be defined outside function
+
+
+if(true) {
+var x = "function scoped!";
+let y = "block scoped!";
+console.log(x);
+console.log(y);
+}
+console.log(x);
+console.log(y); ======================> it will print
+
+"function scoped!" 
+"block scoped!"
+"function scoped!" 
+then throw error 
+
+
+/// we'll almost always wanna stick to using block-scoping instead of function-scoping. Block-scoping generally just provides a more predictable experience, and as I mentioned
+earlier, most other languages that you'll encounter use block-scoping.
+
+
+
+
