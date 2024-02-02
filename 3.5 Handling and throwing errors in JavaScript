@@ -1,0 +1,52 @@
+try -catch :
+
+
+// We have a try block which contains some code that might throw an error and this is followed by a catch block which will get executed if an error does occur inside the try 
+block. The catch block is a pair of parenthesis that give us access to the actual error that was thrown and we can name this variable whatever we want, although we'll usually
+call it something like error or err or e even. And what this variable is it's usually a message about what went wrong so that we can tell the user about it or determine which
+error occurred if there are multiple things that could go wrong in our try block.
+
+try {
+// code that might fail
+} catch ( err ) {
+// error handling logic }
+-------------------------------------------------------------------------------------------------
+try-catch-finally : 
+
+// if there's code we want to be executed regardless of whether or not an error occurs such as closing a database connection or a file we're reading, JavaScript provides 
+us with a finally block that we can add onto the end of our try-catch block and this block isn't necessary all the time and we can simply leave it off if we don't need it. 
+
+try {
+// code that might fail 
+} catch( err ) {
+// error handling logic 
+} finally {
+//clean-up logic 
+}
+----------------------------------------------------------------------------------------------------------
+
+Throwing Errors : 
+
+throw "Invalid input!";
+throw { message : "Error"}
+throw false;
+throw 500;
+
+//if we use this throw statement inside a try block, whatever we put after throw will become the error variable inside the catch block. 
+
+try {
+throw "Ah! An Error!"
+} catch ( err) {
+console.log(err);
+}           ==========================> this prints "Ah! An Error!"
+
+//putting throw directly in the try block isn't always necessary. We could just as easily use throw inside some function we define without 
+a try-catch block and rely on whatever part of our program uses this function to handle it correctly. 
+
+function throwsError () {
+//...
+throw "Error!"
+}
+
+
+
