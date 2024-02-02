@@ -1,0 +1,51 @@
+1) for loop : mainly used to loop through array
+
+for ( let i = 0; i< arr.lenght; i=i+1)  {
+console.log(arr[i]);}
+---------------------------------------------------------
+2) for-of loop : which lets up loop through all the elements in an array more easily
+
+for ( let item of arr ) {
+console.log( item) ;
+}
+
+or 
+for( let person of people ) {
+console.log( person.name); }
+
+-----------------------------------------------
+3) for-in loop : which lets up loop through all the properties of an object
+
+let person = {
+name : "johny",
+age = 30,
+interests : ["music", "food"],
+}
+this is an object named person with properties
+
+for ( let key in person ) {
+console.log(key ": " person[key]);
+}
+
+// the third type of for loop is a bit of a special case. It's called the for-in loop and here's how it's used. Let's say that instead of looping through all the items in
+an array, we have an object like the one that we have here, a person object and we wanna loop through all the properties of the person. Well, that's exactly what the for-in
+loop helps us do. We can say something like, for let key in person, and note that we're using in here instead of of, that's a very important distinction, and then for each
+iteration of our loop, key will be one of the property names in our person object. So for instance name, age, interests, etc. So if we wanted to print out each of the person's
+keys along with the current value of that key, that would look something like this. 
+
+4) forEach loop : which we can call in any array and works similar to for of loop
+
+//There is one more tool that JavaScript provides us with for looping through arrays and that's something called forEach. Now forEach isn't technically a for loop like the
+others rather it's a function that we can call on any array as we see here. Now when we call forEach, we'd pass it a function with one argument and just as a side note, 
+we are allowed to pass functions as arguments to other functions in JavaScript and in this case, what forEach will do is loop through each of the elements in our array and 
+call whatever function we pass here with each element is the argument. So in the example that we see here, we're simply printing each element in our array to the console.
+And likewise if we had an array of people data and wanted to print all of their names for example, we could do that like this. 
+
+arr.forEach( function(x)  {
+console.log(x);
+});
+
+arr.forEach( function(person)) {
+console.log(person.name);
+});
+
