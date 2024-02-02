@@ -1,0 +1,19 @@
+adding small n after the number
+
+let y = 1234528734895437834n;
+
+let bigHex = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFn;
+let bigOctal = 0o77777777777777777777777777777n;
+let bigBinary = 0b1010101010101010010n;
+
+4000000000000000000000000000n * 400000000000000000000000000n = 1600000000000000000000000000n =====> valid
+
+We are not allowed to add regular numbers and bigints directly
+10n + 2  => Error
+
+we can convert the regular number to bigInt and then add
+10n + BigInt(2) => 12n  =================== valid
+
+any decimal will be truncated
+10n/3n = > 3n
+5n / 2n => 2n
