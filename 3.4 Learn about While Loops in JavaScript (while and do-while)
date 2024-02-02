@@ -1,0 +1,19 @@
+// these loops are usually used when we don't know exactly how many iterations we need for our loop to complete.
+
+while(somecondition) { 
+// do something 
+}
+
+while ( false ) {
+// never executed }
+
+do-while loop : 
+do {
+// do something }
+while( somecondition);
+
+do {
+// executed once 
+} while(false);
+
+do-while will execute atleast once for do even if while is false , ( while false will means while will never execute)
