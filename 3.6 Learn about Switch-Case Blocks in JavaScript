@@ -1,0 +1,14 @@
+switch (useranswer) {
+case "a" :
+console.log(....);
+break;
+case "b" :
+console.log(....);
+break;
+default:
+console.log(...);
+
+all cases must have a "break" statement 
+case "a" 
+// do something
+break;
