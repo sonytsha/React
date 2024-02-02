@@ -1,0 +1,142 @@
+defining class : 
+
+class Person {
+ // class body
+}
+
+class person {
+constructor() {
+// instance setup 
+}
+}
+
+class person {
+constructor(name,age) {
+//instance setup
+}
+}
+
+class person {
+constructor(name,age) {
+this.name = name;
+this.age = age;
+}
+}
+
+if we wanted instances of our Person class to have name and age attributes, our constructor would have name and age arguments. And then inside our constructor,
+we would set the name and age attributes on our person instance by using JavaScript's this keyword 
+
+
+----------------------------------------------------------------------------
+and once we've defined that much, we can create instances of our Person class using the new keyword in JavaScript as we see here. And once we've created an instance of a person,
+we're allowed to access the member variables that we've just defined such as name and age, just like we could with regular JavaScript objects that we learned before.
+
+class person {
+constructor(name,age) {
+this.name = name;
+this.age = age;
+}
+}
+let person = new person("henry", 45);
+
+once we have created instances, we are allowed to access member variables that we have just created
+person.name ===> henry
+person.age ===> 45
+-----------------------------------------------------------------------------
+****** there are currently no private class variable in JS
+So currently, the main way to denote that a given variable should be treated as private is by putting an underscore before the variable name as we see here.
+
+Private Variables : 
+class person {
+constructor() {
+this._createdAt = Date,now();
+}
+}
+---------------------------------------------------------
+class methods : 
+class person {
+somemethod(arg1, arg2) {
+// do something 
+}
+}
+We just write the name of the method followed by parenthesis and whatever arguments we want and then brackets surrounding the function body. 
+
+We can then call that method on any instance we've created our class similar to how we access member variables.
+person1.someMethod(42, true);
+
+---------------------------------------------------------------------------------------------------------------------------------
+Static Methods : 
+class person {
+static ageDiff ( person1, person2) {
+return Math.abs ) 
+person1.age - person2.age
+);
+}
+}
+
+person agediff(person1, person2);
+
+//JavaScript also allows us to create static methods for our classes, that is methods that belong to the class itself instead of individual instances of the class. 
+Creating static methods is pretty simple. We just put the keyword static before whatever method we want to define and we have to make sure that we don't use the this keyword
+inside these methods since again, these methods don't belong to any specific instance, so this wouldn't make sense. 
+---------------------------------------------------------------------------------------------------------------------
+
+Subclass and Inheritance : 
+
+If we have a class such as our Person class and we wanna create a subclass, or more specific version of that class, we can do that by using the extends keyword.
+
+class Employee extends person { 
+constructor ( name, age, salary, jobtitle) {
+super(name,age);
+this.salary = salary;
+this.jobtitle = jobtitle;
+}
+}
+For example, we could create an employee subclass that has all the same properties and methods as our Person class with a few extras such as salary and job title member 
+variables. 
+
+And notice that in the constructor for our subclass, we're classing this super function. The super function that we're calling here is the constructor method of whatever 
+class we're extending. In this case it's person. We have to call the super class as constructor from this subclass as constructor in order to set things like the name and 
+age variables correctly. 
+
+So just like in many other languages too, our subclasses can override the methods of their parent classes. 
+
+class person {
+getdescription () {
+// return a string describing the person
+}
+}
+
+class employee extends person {
+// ......
+getdescription() {
+// return a string describing the employees
+}
+}
+
+So for example, if our Person class had a get description method that basically took the person's information and put it into a string, we might wanna override that method 
+for our Employee class to reflect the fact that we now have more information to share about that person.
+
+class employee extends person {
+// ......
+getdescription() {
+let persondesc = super.getdescription();
+}
+
+//So if we wanted to define the get description method of our Employee class a little differently and build on top of the description provided by the Person class,
+we could do that by calling super.description and adding that on to whatever additional description we want our Employee class to provide. 
+
+let someperson = person("alice", 29);
+someperson instanceof person; ========> true
+someperson instanceof employee; ==========> false
+
+let employee = employee("alice", 29);
+someperson instanceof person; ========> true
+someperson instanceof employee; ==========> true
+
+//The last piece of class related syntax we're gonna look at right now is the instanceof operator. Now there are plenty of times in object oriented programming when we 
+need to know if a given object is an instance of a particular class. And to do that, we can simply use an operator called instanceof which looks like we see here. And it's 
+also worth noting that an instance of a subclass is also considered an instance of all its super classes. And that's just a little detail to keep in mind.
+
+
+
