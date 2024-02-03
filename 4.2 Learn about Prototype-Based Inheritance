@@ -8,3 +8,6 @@ this.name = name;
 this.age = age;
 }
 sayHello()
+
+
+let person1 = new person ("john doe", 45) 
