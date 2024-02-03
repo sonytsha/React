@@ -1,6 +1,9 @@
 JS does not have classes
 instead of clases, JS uses prototypes
 
+// JavaScript isn't class based? Well, basically, instead of using classes as the main way to form relationships between
+objects, JavaScript uses something called prototypes.
+
 classes are categories that we can create instances of : 
 class person {
 constructor(name, age) {
@@ -11,3 +14,98 @@ sayHello()
 
 
 let person1 = new person ("john doe", 45) 
+person1.name
+person1.age
+person1.sayHello()
+
+//So, what is a prototype and how is prototypical inheritance, the inheritance model that JavaScript uses, different from 
+class-based inheritance, the inheritance model used by most other object oriented languages? Classes in object-oriented 
+programing define a, sort of, category that we can create instances of. If we have a Person class, for example, we might 
+say that all people have a name and an age, and we can give them a range of possible actions such as, a sayHello method. 
+And we can then create person instances from this class that have all the properties and methods that we define in the class.
+
+
+class employee extends person {
+............
+class softwaredeveloper extends employee 
+}
+
+with prototype-based inheritance, we start off with a prototype object and create "copies" of it
+
+// let's imagine that we have a person object, which is defined using the curly-brace syntax instead of the new keyword,
+that has name and age properties, as well as the sayHello function. This person object can serve as a prototype for any other 
+person objects that we want to create. The way we do this is by using a built-in function in JavaScript called Object.create.
+
+let person = {
+name = "john doe",
+age = 45,
+sayHello : function() {
+console.log('Hi', 'I'm ${this.name}`);
+},
+}
+
+let anotherperson = Object.create(person); ---------- this creates a child from a prototype object
+
+"anotherperson" has all the properties and methods from "person"
+
+person.name ========> "john doe"
+anotherperson.name ====> "john doe"
+
+anotherperson.sayHello(); ============> "Hi, I'm John Doe"
+
+we are allowed to override the properties that our newperson inherited from the person prototype, as well as add new properties
+
+anotherperson.name = "joe schmoe";
+anotherperson.sayHello(); ===========> "Hi, I'm joe schmoe"
+anotherperson.haircolor = "brown";  ==============> added new properties
+
+any changes made to the prototype will be reflected on the prototype's child objects :
+anotherperson.age  ==================> 45
+person.age = 100;
+anotherperson.age =================> 100
+
+unless the child has overridden those values : The exception to this is if you've overridden one of those inherited values,
+in which case, changes to those values on the prototype won't change the values on the child. 
+anotherperson.name = "john doe"
+anotherperson.name = "Overridden!"
+person.name = "bob smith";
+anotherperson.name =============> "Overridden!"
+
+//And, in the case that we delete one of these overriding properties that we've set, which we can do using the delete keyword in JavaScript, 
+the value of that property won't be undefined as we might expect, it'll go back to whatever the value on the prototype object 
+is. 
+
+person.name  ===================> "john doe"
+anotherperson.name ================> "Overridden!"
+delete anotherperson.name;
+anotherperson.name ================>  "john doe"
+
+
+//if we create a child object from a prototype, although we can access the properties of the prototype from the child object,
+as we're doing here with anotherPerson.name, which gives us the default value that it got from the person prototype. 
+If we print the object to the console, it shows the object is empty.
+let anotherperson = object.create(person);
+anotherperson.name =============> "john doe"
+console.log(anotherperson); ==========> prints "{}"
+
+Now, this has to do with the distinction that JavaScript makes between an object's so-called own properties, and the 
+properties that it inherits from its prototype. You see, when we set a new property in an object, or override an inherited 
+property by setting a different value, this property is considered the object's own property. These own properties show up
+when, say we print the object to the console, as we're doing here.
+
+"own properties" are properties that are set directly on the object, not inherited from a prototype
+
+console.log(anotherperson); ==============> {}
+anotherperson.name = "sonytsha"; 
+console.log(anotherperson); ======================> {name :'sonytsha'}
+
+we are still able to access inherited properties, even though they do not show up when the object is printed : 
+let anotherperson = object.create(person);
+console.log(anotherperson); ============> {}
+anotherperson.name ==================> "john doe"
+
+
+
+
+
+
