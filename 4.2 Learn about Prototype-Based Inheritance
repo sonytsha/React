@@ -104,7 +104,33 @@ let anotherperson = object.create(person);
 console.log(anotherperson); ============> {}
 anotherperson.name ==================> "john doe"
 
+// Even though inherited properties don't show up when we print the object, we're still able to access them. Now, 
+this happens because of something called the prototype chain in JavaScript. When we try to access a property in an object,
+JavaScript follows a pretty simple strategy to determine what value it should tell us for that property. It first checks 
+to see if the object has that property as one of its own properties. If it does, JavaScript will tell us whatever the 
+value of that property is in the object itself. If it doesn't, however, JavaScript will then check the object's prototype
+to see if the prototype has that property as one of its own properties. And if it does, it'll return whatever the value of
+that property is on the prototype. However, if it doesn't, it'll move on to the prototype's prototype and so on until it 
+either finds that property or reaches the end of the prototype chain. The end of the prototype chain for all objects in 
+JavaScript is the base object prototype.
 
+null
+object.prototype
+person
+anotherperson.name
+
+object.prototype or {} is the uppermost prototype of ll JS objects
+
+to find out what is the prototype of the object : 
+Object.getPrototypeOf(obj);
+
+let anotherPerson = Object.create(person);
+
+Object.getPrototypeOf(anotherPerson);
+
+{name : "John Doe". age: 45, ..........}
+
+Object.getPrototypeOf(person); ============> {}
 
 
 
