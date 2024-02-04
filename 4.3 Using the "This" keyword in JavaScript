@@ -1,0 +1,52 @@
+this is JS refers to the "current execution context"
+
+let IntroduceYourself = function() {
+    return `Hi my name is ${this.name}`;
+}
+output : undefined
+
+IntroduceYourself ()
+output : 'Hi my name is '
+
+let person = {
+    name : 'sonytsha',
+    IntroduceYourself ,
+}
+output : undefined
+
+
+person.IntroduceYourself ()
+output : 'Hi my name is sonytsha'
+
+let setname = function() {
+    this.name = "NAME!!!";
+}
+output : undefined
+
+person.setname = setname
+output : ƒ () {
+    this.name = "NAME!!!";
+}
+person.setname()
+output : undefined
+person
+{name: 'NAME!!!', IntroduceYourself: ƒ, setname: ƒ}
+
+setname()
+output : undefined
+name
+output :  'NAME!!!'
+
+x= "global"
+output :   'global'
+
+let Car = function( make, color) {
+    this.make = make;
+    this.color = color;
+}
+output :   undefined
+let mycar = new Car ( "chevy", "grey");
+output :    undefined
+
+mycar
+output :  Car {make: 'chevy', color: 'grey'}
