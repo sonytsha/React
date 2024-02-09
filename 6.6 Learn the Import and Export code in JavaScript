@@ -1,0 +1,60 @@
+in older versions : 
+
+exporting a funtion : let function name myfunc : module.exports = myFunc;
+
+And if we wanted to export multiple pieces of code from a single file, for example, several variables or functions, we could do this using so-called named exports from one of our files,
+which looked like what we see here. 
+
+module.exports.myFunc = myFunc;
+module.exports.myString = myString;
+
+module.exports = {
+myFunc,
+myString,
+};
+
+module.exports = myFunc;
+
+Instead of using module.exports to export code from a file, this new syntax uses the keyword export. So here's what it looks like to export code using ES6's new export syntax. In order to export something as the default export of the file, 
+we just say export default and then whatever code we wanted to export. 
+
+IN ES6 newer version : export : ***************************** export default myFunction; *******************************
+
+export let myString = "Hello";
+export function myFunc() {  }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+IN ES6 newer version : import : ***************************** import myFunc from `./myFunc`; // ./myFunc is the file path or package name
+
+
+export let myString = "Hello";
+export let myFunc = () => ....
+
+import { myString, myFunc } from 1./stuff`;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+export default myFunc; ----> is NOT exactly the same as -----> module.exports = myFunc;
+export default myFunc; ----> is  exactly the same as -----> module.exports.default = myFunc;
+
+export default myFunc; ----> let myFunc = require(`./someFile`).default;
+
+module.exports = myFunc;
+module.exports.default = myFunc; =======================> import myFunc from `./someFile`;
+
+import * as util from `./utilities`;
+putil.someHelpfulFunction();
+util.default
+
+export default myFunction;
+import myFunction from 1./someFile`;
+
+export let myString = "Hello";
+export function myFunc() {
+import { myString , myFunc } from `./someFile`;
+
+export let myString = "Hello";
+export function myFunc() { }
+import * as stuff from `./someFile1;
+
+
+
