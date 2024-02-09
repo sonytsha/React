@@ -1,0 +1,132 @@
+- Another really helpful syntax that ES6 provides us with, comes into view when working with objects and arrays, and this is something called the spread operator.
+When working with objects or arrays in java script, it happens quite often that we want to combine two or more arrays or objects into one. Now before ES6, if you wanted to do 
+this, you sort of had to either loop through all the properties in both objects and set those properties on another object, or you could use the function called object.assign,
+which took care of all that for you. But personally I always found that code like this was a bit of an eyesore. So what ES6 has provided us with in order to make these kinds of
+operations easier, is something called the spread operator. And it looks something like this. If we wanted to combine our two objects like we did before, we could simply use a 
+spread operator, which is three dots before the object name, to sort of spread the properties and values of each object into the new object that we're defining. And this here 
+would give us an object with all the properties and values of both object one and object two. And there are some other nice things about this syntax as well. For example, if 
+we wanted to add in new properties along with the combined properties of our objects, we could simply define them right in here with our spread out objects. So, one question 
+to address with the spread operator, is what happens when our objects have conflicting properties? In other words, when both objects that we're combining have the same key, 
+but different values for that key, as we see here. Well, in that case, whatever object is spread last in our new object will override the property value of the ones that come
+before him. This is very similar to what we saw earlier with object.assign. So if object one and object two both had a Z property with different values, and object two was 
+spread last, the final object would have Z equal to object two's value for Z. And likewise if object one was last, the value for that key in the final object would be object 
+one's value for that key. And likewise, if we were to add another value for the Z property into the new object after the spread operators, that value would override both the
+other values. As I mentioned a little earlier, the spread operator can also be used with arrays. The syntax for this is very similar to the syntax for objects. If we have two 
+arrays that we want to combine, we can create a new array and use the spread operator to spread the elements from both arrays inside the new one. And similarly to objects, 
+if we want to add new elements in along with our spread out arrays, we can simply put them in wherever we want in between the spread operators. Oh, and just as a side note,
+arrays don't carry the same concerns with them about overriding keys like objects did. Since the array just makes space for whatever new elements we add, nothing is ever 
+overwritten when using the spread operator with arrays. The third and final use for the spread operator is when working with function arguments. The spread operator allows 
+us to both get all the arguments passed to a function as an array, and also pass an array of values to a function as arguments. Now, just as an example, there are some cases 
+where we want to specifically name the first few arguments of our function, and then get an array containing the rest of the arguments that are passed. And before ES6, there 
+wasn't really a good way to do this. But now with the spread operator, we can use this syntax that we see here to get the rest of the arguments. As I mentioned before, we can
+also use the spread operator to pass the elements of an array as arguments to a function. For example, if we had an add function that took three numbers and returned the sum 
+of those numbers, we couldn't simply pass an array of numbers to that add function, since in this case, java script would think we only meant to pass one argument, an array,
+instead of three arguments, the elements of the array. So what we can do in this case is use the spread operator with this array, and java script will call our function with 
+the elements of the array as arguments. So then, just as a review, the main uses of the spread operator are to combine objects and arrays in a more readable way, to get the 
+arguments of a function as an array, and to pass the elements of an array to a function as arguments.
+
+
+
+let obj1 = {
+a : 1,
+b : 2,
+};
+
+let obj2 = {
+c : 3,
+d : 4 ,
+}          =======================> outcome
+
+{ a : 1,
+b: 2,
+c: 3,
+d: 4 ,
+}
+
+let combined = {}'
+for key in obj1 {
+combined[key] = obj1[key];
+}
+
+for key in obj2 = {
+combined[key] = obj1[key];
+}
+
+let combined = Object.assign({}, obj1, obj2);
+
+let combined = {
+...obj1 ,
+...obj2,
+}
+
+// three dot before object name
+
+let combined = {
+...obj1 ,
+...obj2,
+e : 5,
+f : 6,
+}
+
+let combined = {
+...obj1,
+..obj2, 
+}
+
+=====================> {
+z : "second"
+}
+
+let combined = {
+...obj2,
+..obj1, 
+}
+=====================> {
+z : "first"
+}
+
+let combined = {
+...obj2,
+..obj1, 
+z : "third",
+}
+=====================> {
+z : "third"
+}
+
+
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+let combined = {
+...arr1,
+...arr2,
+};
+
+
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+let combined = {
+0,
+...arr1,
+...arr2,
+7,
+};
+
+let myFunc = (...args) => { }
+someOtherFunc(...myArray);
+
+let func = ( arg1, arg2, ...rest) => {
+console.log(rest);
+}
+func(1,2,3,4); ====> prints[3,4]
+
+let add = (x,y,z) =>
+x+y+z;
+
+let numbers = [1,2,3];
+add(...numbers); ===> 6
+
+
+1) combining objects and arrays
+2) getting function arguments as an array
+3) passing array elements as arguments
