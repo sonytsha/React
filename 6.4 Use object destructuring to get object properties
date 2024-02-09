@@ -1,0 +1,59 @@
+Object Destructuring : 
+
+let person = {
+name : "John",
+age : 29,
+hairColor : "brown",
+eyeColor : "brown",
+// ....
+}
+
+let name = person.name;
+let age = person.age;
+let hairColor = person.hairColor;
+let eyeColor = person.eyeColor;
+
+let { name , age } = person;
+
+let {
+name,
+age,
+eyeColor,
+} = person;
+
+let {
+name,
+age,
+eyeColor = "unknown",
+} = person;
+
+
+let {
+name : personName,
+age ,
+} = person;
+
+personName ====> "Ben"
+name =====> undefined
+
+let {
+name : personName = "Unknown",
+age, 
+} = person;
+
+
+let person = {
+// ...
+bodyMeasurements : {
+height : 69.1,
+waist : 40.2,
+shoeSize : 11 ,
+}
+}
+
+let { bodyMeasurements : { height } } = person;
+
+let numbers = [1,2,3,4,5,6];
+let [x,y,z] = numbers;
+x==> 1, y ===> 2, z ===> 3
+
