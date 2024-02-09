@@ -1,0 +1,12 @@
+let myString = 'Single quotes!';
+let myString = "Double quotes!";
+let myString = `backticks!`;
+
+let intro = "Hi, I'm" + name;
+let intro = "Hi, I'm ".concat(name);
+
+let string = "2 + 2 is " + 2 +2; ===========> " 2 + 2 is 22"
+
+let intro = `Hi, I'm ${name}`;
+let math = 1 2 + 2 is ${2+2};
+
