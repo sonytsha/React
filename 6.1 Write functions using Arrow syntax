@@ -1,0 +1,57 @@
+function myFunction ( arg1, arg2) {
+// ...
+}
+
+
+let myFunction = ( arg1 , arg2 ) => {
+// ....
+}
+
+Arrow functions can only be defined using let, var or const.   There is no equivalent to : 
+function myFunction() {
+//.... 
+}
+
+
+arrow functions are not hoisted
+
+with only 1 argument  : 
+let myFunction = arg1 => {
+// ...
+}
+
+with only 1 statement in the body :
+let myFunction = arg1 =>
+arg1 * 100;
+
+let double = x => x * 2;
+
+let someFunction = () => {
+message : " Hello1",
+time : "8:00 am",
+});
+
+
+let myObj = {
+name : "Bob",
+logName : function() {
+console.log(this.name);
+}
+};
+
+myObj.logName(); ===> logs "Bob"
+
+let myObj = {
+name : "Bob",
+logName : () => {
+console.log(this.name);
+}
+};
+
+myObj.logName(); ====> logs undefined
+
+fetchData( data => ...);
+arr.map( x => x * 2);
+arr.filter( x => x.isCompleted);
+
+Use the function keyword inside classes, use arrow functions for most other classes
