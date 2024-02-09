@@ -1,0 +1,26 @@
+function myFunc ( x,y,z,a,b) {
+/ ...
+}
+
+
+function myFunc ( x,y,z,a,b) {
+x = x|| "default!";
+y = y ||100;
+// ....
+}
+
+let myFunc =  ( x = "default!", y = 100 )  => {
+// ...
+}
+
+
+let defaultArgs = ( arg1 = "Hello", arg2 = 3, arg3 =true) => ({
+    arg1,
+    arg2,
+    arg3,
+})
+undefined
+defaultArgs();
+{arg1: 'Hello', arg2: 3, arg3: true}
+defaultArgs("Goodbye")
+{arg1: 'Goodbye', arg2: 3, arg3: true}
