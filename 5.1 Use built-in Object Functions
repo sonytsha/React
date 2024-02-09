@@ -1,0 +1,126 @@
+Object.keys()
+Object.values()
+Object.entries()
+...
+------------------------------------------------------------------------------------------------------------------------------------
+let myObj = {
+a : 1,
+b : 2,
+c : 3,
+}
+
+Object.keys(myObj);
+["a","b","c"]
+
+Object.keys : 
+for ( let person of people ) {
+let keys = Object.keys(person);
+for( let key of keys) {
+console.log(key + ":" + person[key]);
+}
+}
+
+for ( let person of people) {
+for ( let key in person) {
+console.log(key + ":" + person[key]);
+}
+}
+
+Object.key(obj).filters(...);
+Object.keys(obj).sort();
+
+Object.values :
+let myObj = {
+a : 1,
+b : 2,
+c : 3,
+}
+Object.values(myObj);
+-------------------------------------------------------------------------------------------------------------------------------------
+Object.entries :
+let myObj = {
+a : 1,
+b : 2,
+c : 3,
+}
+
+Object.entries(myObj);
+[["a",1], ["b", 2] , ["c", 3]]
+
+let entries = Object.entries(myObj);
+for ( let entryPair of entries) 
+{
+console.log( entryPair[0] + ":" +entryPair[1]);
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Object.assign :
+
+let obj1 = { a:1, b : 2};
+let obj2 = { c: 3, d : 4};
+Object.assign(obj1, obj2);
+obj1 -----------> { a:1, b:2, c:3, d:4}
+
+
+let person ={
+name : "Betty",
+age : 48,
+}
+
+let careerData = {
+jobtitle : "developer",
+yearsatcompany : 5,
+level :"senior"
+}
+Object.assign(person, careerData);
+
+let.medicalData = {....}
+let.financialData = {......}
+
+Object.assign (
+person,
+careerData,
+medicalData,
+financialData,
+);
+
+let person = {
+name : "betty",
+// ...
+}
+
+let medicaldata = {
+name : "betsy",
+// .....
+}
+
+*****properties of object that come later will overwrite the proerties of objects that come before ************
+Object.assign ( person, medicalData);
+person.name ------------> "betsy"
+
+
+let myObject = { 
+a : 1, b= 2,
+}
+myOtherObject = myObjecy;
+myOtherObject.a = 100;
+myOtherObject.a   100;
+
+
+
+let myObject = { 
+a : 1, b= 2,
+}
+let myOtherObject = Object.assign({}, myObject);
+
+myOtherObject.a = 100;
+myObject.a -----> 1
+
+If we want to create an actual copy of an Object, instead of just another reference to the same Object, we can do that by calling Object.assign, with an empty Object 
+as the first argument, and then whatever Object we want to copy as the second argument. What this does is takes all the keys and values of the second argument, the Object
+that we want to copy, and sets them on the empty Object that we pass as the first argument. And here would be a good place to note, that in addition to modifying the first
+argument we passed to it, which in this case doesn't do anything, since it's just an unnamed, empty Object, Object.assign also returns the final value of setting all the
+keys and values on the first Object. So we can just define a new variable to hold the result. And of course, now that we have an actual copy of the Object, and not just a 
+reference to the same Object, the changes that we make to our new Object will no longer be reflected on the original Object that we copied.
+
