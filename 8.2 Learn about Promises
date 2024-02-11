@@ -1,0 +1,122 @@
+ Since with callbacks, any results that you get from an asynchronous operation are only accessible inside the callback, this makes things a bit difficult when writing software 
+where there are many asynchronous operations that take place one after the other. For example, our software could have to read some data out of a file,
+send that data to a server via a network request, update some data on the server with another request and finally make one last request to get the current state of the data
+on the server. And all of this leads to what's become known as callback hell that is a series of nested callbacks that slowly move over to the right the deeper you get and 
+become unreadable very quickly.
+
+readFile( 'someFile.txt', contents => {
+// ...
+postRequest ('www.someapi.com', contents , response => {
+// ...
+updateDataOnServer ( data => {
+// ...
+getUpadtedData ( data => {
+// ;;;
+});
+});
+});
+});
+
+// Promises are basically a much nicer way of writing multiple asynchronous operations back to back without falling into the callback hell that we just saw. And they look 
+something like this. Instead of nested callbacks that slowly slope over to the right, we now have a chain of then functions, each of which waits for the one that comes 
+before it to complete before executing the function that we pass to it. Now beyond this, promises are not really very self-explanatory. 
+
+Promises in JavaScript : 
+
+readFile( 'someFile.txt')
+.then ( contents => {
+// send data to server
+})
+.then( response => {
+// update data to server 
+})
+.then( data => {
+// get updated server data
+})
+.then( data => {
+// whatever else you need to do 
+});
+
+There are 3 possible state of promises :
+ 1) pending : the asynchronous operation still has not been completed yet
+2) fulfilled : the operation completed successfully
+3) rejected : the opration failed
+
+this promise constructor takes a function that has two arguments. It takes a resolve argument and it takes a reject argument. Now, both of these arguments are
+functions that we can call from inside this function that we're passing to the promise constructor to change the promise's state from pending to either fulfilled or rejected.
+
+So as a very simple example, we're gonna use the setTimeout function that we saw earlier to create a promise that waits for a thousand milliseconds and then calls a resolve function with a 
+success message.
+
+let myPromise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve("Success!");
+  }, 1000);
+  });
+myPromise.then(message => {
+  console.log(message);
+});
+
+
+// what happens when we reject a promise by calling the reject function with an error message or something like that? Well, in this case, there's another promise method 
+called catch that we can chain off the then method. This method behaves very similarly to then in that we pass it a function that takes one argument. The main difference
+is that the function we pass to catch gets called when the promise gets rejected, while the function we pass to then gets called when the promise gets resolved. So going 
+back to our editor, if we were to change our myPromise promise that we defined here so that it calls the reject function with an error message instead of resolve, so we'll 
+ay reject and we'll say error and then after this then method here, we put dot catch and say error and we're just gonna say console.logerror. 
+
+myPromise.then ( message => {
+// do something
+})
+.catch ( err => {
+// if something went wrong ...
+});
+
+example : 
+
+let myPromise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve("Error!");
+  }, 1000);
+  });
+myPromise.then(message => {
+  console.log(message);
+})
+.catch(error => {
+console.log(error);
+});
+
+// Now, what happens if we run our code is that it'll wait for one second and then print the error message that we're rejecting the promise with. So that's catch and then. 
+There's one more method in addition to those two that we can use to add functionality to our promises and that's the finally method. This is pretty similar to the finally
+block that we can use with try catch. The function we pass to it gets called when the promise completes, regardless of whether the promise is fulfilled or rejected. We can 
+use this to perform any cleanup logic that we need to be executed no matter what such as closing database connections. So if we go back to our editor and add dot finally
+after catch, we're just gonna pass it a function that doesn't take any arguments and it'll just print, "I'm done." And now if we run our code, we'll see that it prints our 
+error message from before since we're still rejecting the promise and then it prints, "I'm done" from inside the finally block.
+
+myPromise.then( message => {
+// do something
+})
+.catch ( err => {
+// if something went wrong ...
+})
+/finally(() => {
+// this executes no matter what 
+});
+
+
+
+let myPromise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve("Error!");
+  }, 1000);
+  });
+myPromise.then(message => {
+  console.log(message);
+})
+.catch(error => {
+console.log(error);
+})
+.finally(() => {
+console.log("I am done");
+})
+
+
