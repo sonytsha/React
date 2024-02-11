@@ -1,0 +1,38 @@
+JS  is single threaded bt there are some techniques that makes it feel multi-threaded
+
+call backs in JS : 
+
+fs.readFile('someFile.txt', fileContents => { 
+// do something with the file contents 
+});
+
+The rest of the program will move on while our asynchronous operations complete :
+
+fs.readFile('someFile.txt', fileContents => {
+console.log("Inside callback");
+});
+console.log("Outside callback");
+
+It prints "Outside callback" first, then "inside callback
+
+fs.readFile('someFile.txt', contents => {
+// this is the only reliable place 
+// we can access the result
+});
+
+
+function doSomething () {
+setTimeout(() => {
+console.log("Here!");
+}, 2000);
+}
+
+use one of the most basic asynchronous functions in JavaScript and that's a function called setTimeout. Now, what setTimeout does is wait for a certain number of 
+milliseconds, which we specify ourselves, and then it calls whatever function we pass to it. So just as an example, what we're gonna do is we're gonna define a function
+and we'll just call this function something like doSomething and inside this function we're gonna call setTimeout and the first argument that we pass to setTimeout is 
+the function that'll get called after a certain number of milliseconds. So for now we'll just say console.log and we'll say here. And the second argument that we pass to 
+setTimeout is the exact number of milliseconds that we want JavaScript to wait before executing this function. So if we say two seconds, which is 2,000 milliseconds by the
+way, and then we're gonna click Run and we can kick off our setTimeout function by saying doSomething with parenthesis and hitting Enter and we see that after two seconds,
+it prints here to the console. So that's just a very simple example of how callbacks work. Most other asynchronous functions that you find that use callbacks such as network
+requests or reading files will work on pretty much the same principle that we see here. The only difference is that instead of specifying an exact amount of time to wait 
+before calling the function, they'll wait until the asynchronous operation actually completes the call to function.
