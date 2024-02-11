@@ -1,0 +1,5 @@
+GET /hello -----> Sends back "Hello!"
+GET /people ----> Send an array of people objects
+GET /people/:name -----> Sends back to a specific person
+GET /file-data ---> Reads a file and sends back contents
+POST/ people ----> adds a new person to the server 
