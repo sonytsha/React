@@ -19,3 +19,7 @@ and other things such as this robots.txt file here, and the manifest.json file w
 to run : npm run start 
 
 or nom start
+
+
+let's change this message here to our own string. So to do that, we're gonna go back to our app.js file. And we're gonna find this Edit source app.js and 
+save to reload thing and just replace it with our own message. And when we do that and save our code, we see that the change is immediately reflected in the browser.
