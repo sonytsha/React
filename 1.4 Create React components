@@ -1,0 +1,138 @@
+Components are React's basic units of organization. They're reusable collections of
+elements and functionality that usually represent conceptually distinct pieces of our application.
+
+older syntax : 
+
+class App extends React.Components {
+}
+
+more modern and preferred way of defining React components and that's by using what's called functional component syntax. 
+
+just as a note, we usually just name our files the same thing as the component they contain and it's usually considered a best practice to only export one React component per file
+
+, in any file where we use JSX, we're required to import React at the top of the file.
+
+
+
+within Greetings.js :
+
+import React from 'react';
+function Greetings() {
+    let isMorning = (new Date()).getHours() < 12;
+    return isMorning
+    ? <h3> Good Morning! </h3>
+  : <h3> Good Evening!</h3>;
+}
+
+export default Greetings;
+
+the JSX that React components return is only allowed to contain one top level element. 
+
+
+So here's what I mean by that, in the case of our Greeting component, we're only returning a single h3 tag in either case and this is perfectly fine. 
+However, what if we wanted to add another tag, say a paragraph tag underneath this telling the user some further information, maybe we're telling the user 
+how many new messages they have or something like that? So we might say paragraph, you have five new messages or something like that. In this case, there's a
+problem since our Greeting component is now returning two top level elements, the h3 element and the paragraph element. And there are two things that we can do in 
+this case. The first would be to wrap both of these elements in a div tag, which would look something like this. We could say div and then put both those elements inside 
+of there. And just as a side note here, we usually wrap our JSX in parentheses when it's on more than one line. But anyway, this div thing fixes our problem and in many cases
+it's not necessarily a bad way of doing it. However, in applications with a pretty intricate and complex user interface, having an extra surrounding div for many of the 
+components can really clutter up the DOM. 
+
+greetings.js file will look like this with <div> :
+
+import React from 'react';
+function Greetings() {
+    let isMorning = (new Date()).getHours() < 12;
+    return isMorning
+    ? (
+        <div> 
+        <h3> Good Morning! </h3>
+        <p> You have 5 new messages</p>
+        </div>
+) 
+:(
+    <div>
+
+    <h3> Good Evening! </h3>
+        <p> You have 5 new messages</p>
+        </div>
+)
+    }
+
+export default Greetings;
+
+
+
+ What React provides us with in this case is something called React fragments. Fragments are sort of like this div wrapper that we use so that our component 
+was only returning one top level element but the difference is that when our component is actually rendered, React will leave fragments out of the DOM completely. 
+So I'm gonna give you an example but first, let's copy and paste this for the Good Evening element here and just change that to say Good Evening. So here's what I 
+mean about all that React fragment stuff. If we go back to our app and open up our developer tools, we see that our Good Evening and you have five new messages elements 
+are inside this div tag that we wrapped them with. If we were to wrap them in a fragment instead, this extra layer just wouldn't be there, our Good Evening and you have 
+five new messages things would be on the same level as our image here. 
+
+you can write <React.Fragment> instead of <> in the belowm both means same : 
+
+import React from 'react';
+function Greetings() {
+    let isMorning = (new Date()).getHours() < 12;
+    return isMorning
+    ? (
+        <> 
+        <h3> Good Morning! </h3>
+        <p> You have 5 new messages</p>
+        </>
+) 
+:(
+    <>
+
+    <h3> Good Evening! </h3>
+        <p> You have 5 new messages</p>
+        </>
+)
+    }
+
+export default Greetings;
+
+
+
+while both our app and Greeting components are currently defined using this function keyword here, we're more than welcome to define them using arrow function syntax and in fact, 
+this is the way that I almost always do it when I can. So instead of defining our Greeting component like this, we could just say export const Greeting equals and then use 
+arrow function syntax, which I personally think looks a little nicer. And of course, in the case where the body of our component is only one statement, in other words, when
+the body of our component doesn't contain any logic that comes before the return statement, we're allowed to drop the curly braces around the function body, along with the 
+return keyword. So in theory, we could do something like this.
+
+impoort React from 'react';
+export const Greeting = () =>
+(new Date()).getHours() < 12;
+? ( 
+<>
+<h3> Good Morning! </h3>
+<p> You have 5 new messages </p>
+</>
+:( 
+<>
+<h3> Good Evening! </h3>
+<p> You have 5 new messages </p>
+</>
+);
+
+
+
+we can actually refactor this Greeting component a little bit to save a couple lines of code. Instead of defining the React fragment wrapper in paragraph tags
+twice here, what we can do is we can define the header tag as its own variable. So we can say something like, let greetingHeader equals isMorning, h3 Good Morning,
+otherwise, h3 Good Evening. And then we can simply delete all of this and say, return inside React fragments, curly braces, greetingHeader and paragraph you have five
+new messages. And if we go back and take a look at our application again, we see that it looks exactly the same, except it's a little more tidy behind the scenes here.
+
+export const Greetings = () => {
+let isMorning = (new Date().getHours() <12;
+let greetingHeader = isMorning
+? <h3> Good Morning! </h3>
+: <h3> Good Evening! </h3>;
+return (
+<> 
+{greetingHeader}
+p> You have 5 new messages </p>
+</>
+)
+}
+
