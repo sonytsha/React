@@ -1,0 +1,9 @@
+1.3 Write your first JSX
+At first glance, it looks an awful a lot like HTML, especially the JSX that we have here, since it only uses div, paragraph and other common HTML tags. However, JSX goes 
+beyond HTML. We'll see many examples of this throughout the course. 
+But one of the first ways this is true is that JSX allows us to use other components we've defined as tags.
+
+Another nice thing about JSX is that it's not a separate thing from JavaScript. What I mean by that is that we can assign JSX expressions to JavaScript variables, 
+and then use JavaScript logic to help structure and restructure our pages.
+This means that if we wanted to do something like display a different greeting message element on the page, depending on the time of day, 
+
