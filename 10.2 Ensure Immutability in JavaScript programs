@@ -1,0 +1,7 @@
+const x = 5;
+x = 6 ; ===> error
+mutation is not allowed
+
+
+const arr = [1,2,3];
+arr[0]= 99; ===> no error
