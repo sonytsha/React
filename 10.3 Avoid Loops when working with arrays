@@ -1,0 +1,21 @@
+myArray.find( x => x.isDone);
+myArray.filter( x=> x < 5);
+myArray.map ( x => x*2);
+
+avoiding for loops :
+
+let evens = [];
+for number in numbers {
+if ( number % 2 === 0) {
+evens.push(number);
+}
+}
+
+we can write it as : 
+let evens = numbers.filter( x => x %2 ===0 );
+
+with isEven :
+
+let isEven = x => x%2 === 0;
+let evens = numbers.filter(isEven);
+
