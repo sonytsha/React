@@ -1,0 +1,21 @@
+cd repos
+
+if getting error -
+first create a folder in desktop named repos-
+then run the following : 
+
+npm install
+npm cache clean --force
+npm install -g npm
+npm install
+
+npx create-react-app my-react-app --use-npm
+
+open the file thats created
+
+The public folder, like the public folder on a static site, contains things that we want the client visiting our site to be able to access such as HTML files, photos,
+and other things such as this robots.txt file here, and the manifest.json file which is used when Android users save our site as an app on their phone. 
+
+to run : npm run start 
+
+or nom start
