@@ -1,0 +1,5 @@
+ React sort of takes this idea and runs with it. React components can take props which are attributes that we can pass into our components to change something about them. 
+
+With text inputs for example, we can pass a placeholder attribute to change the hint text that shows up before the user types anything. Or as we've seen with image tags, we can pass a source attribute here to define what image should be displayed.
+Now React sort of takes this idea and runs with it.
+
